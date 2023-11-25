@@ -51,7 +51,7 @@ struct AccountCard: View {
             Text(account.type)
                 .font(.footnote)
             Button(action: saveAction, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+                Text("Save")
             })
             
         }
@@ -63,7 +63,7 @@ struct AccountCard: View {
 }
 
 #Preview {
-    AccountCard(account: Account(login: "tester", avatar_url: "https://avatars.githubusercontent.com/u/78576375?s=40&v=4", url: "vdfv", repos_url: "fgdf", name: "John Watson", bio: "Lorem ipsum dolor sit amet",type: "Organisation"),saveAction: {
+    AccountCard(account: Account(login: "tester", avatar_url: "https://avatars.githubusercontent.com/u/78576375?s=40&v=4", url: "vdfv", repos_url: "fgdf", name: "John Watson", bio: "Lorem ipsum dolor sit amet",type: "Organisation",favourite: true),saveAction: {
         print("Save")
     })
 }

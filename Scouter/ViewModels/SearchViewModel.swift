@@ -9,13 +9,11 @@ import Foundation
 import CoreData
 
 extension SearchUserView{
-    @MainActor class SearchViewModel:ObservableObject{
+    class SearchViewModel:ObservableObject{
+        let dataController = DataController.shared
         @Published var searchedAccount:Account?
+        var context = DataController.shared.container.viewContext
         
-        func convertAccount(_ a:Accounts) ->Account{
-            let acc = Account(login: a.login!, avatar_url: a.avatar_url!, url: a.url!, repos_url: a.repos_url!, name: a.name!, bio: a.bio ?? "", type: a.type!)
-            return acc
-        }
         
         func addData(dataToSave: String) {
             
@@ -40,19 +38,20 @@ extension SearchUserView{
             task.resume()
         }
         
-        //    func saveAccount(){
-        //        if let account = searchedAccount{
-        //            let newAccount = Accounts(context: container.viewContext)
-        //            newAccount.name = account.name
-        //            newAccount.avatar_url = account.avatar_url
-        //            newAccount.bio = account.bio
-        //            newAccount.login = account.login
-        //            newAccount.repos_url = account.repos_url
-        //            newAccount.type = account.type
-        //            newAccount.url = account.url
-        //            saveData()
-        //        }
-        //    }
+            func saveAccount(){
+                if let account = searchedAccount{
+                    let newAccount = Accounts(context: context)
+                    newAccount.name = account.name
+                    newAccount.avatar_url = account.avatar_url
+                    newAccount.bio = account.bio
+                    newAccount.login = account.login
+                    newAccount.repos_url = account.repos_url
+                    newAccount.type = account.type
+                    newAccount.url = account.url
+                    newAccount.favourite = false
+                    dataController.saveData()
+                }
+            }
         
         
         

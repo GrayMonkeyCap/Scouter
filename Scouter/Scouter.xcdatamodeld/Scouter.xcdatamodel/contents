@@ -3,6 +3,7 @@
     <entity name="Accounts" representedClassName="Accounts" syncable="YES" codeGenerationType="class">
         <attribute name="avatar_url" optional="YES" attributeType="String"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="login" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="repos_url" optional="YES" attributeType="String"/>

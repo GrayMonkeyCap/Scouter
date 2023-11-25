@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E909D7B12B11FF21009ECC3C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */; };
+		E909D7B32B1271C7009ECC3C /* ListCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909D7B22B1271C7009ECC3C /* ListCard.swift */; };
 		E93828292AFF62AB00FBABCD /* ScouterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828282AFF62AB00FBABCD /* ScouterApp.swift */; };
 		E938282B2AFF62AB00FBABCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938282A2AFF62AB00FBABCD /* ContentView.swift */; };
 		E938282D2AFF62AC00FBABCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938282C2AFF62AC00FBABCD /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E909D7B22B1271C7009ECC3C /* ListCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCard.swift; sourceTree = "<group>"; };
 		E93828252AFF62AB00FBABCD /* Scouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93828282AFF62AB00FBABCD /* ScouterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScouterApp.swift; sourceTree = "<group>"; };
 		E938282A2AFF62AB00FBABCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				E938285A2AFFA67D00FBABCD /* SearchUserView.swift */,
 				E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */,
 				E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */,
+				E909D7B22B1271C7009ECC3C /* ListCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				E93828612B02A53700FBABCD /* SearchViewModel.swift in Sources */,
 				E9ADBF6E2B03F5D700E08608 /* AccountCard.swift in Sources */,
 				E93828352AFF62AC00FBABCD /* Scouter.xcdatamodeld in Sources */,
+				E909D7B32B1271C7009ECC3C /* ListCard.swift in Sources */,
 				E938285B2AFFA67D00FBABCD /* SearchUserView.swift in Sources */,
 				E938282B2AFF62AB00FBABCD /* ContentView.swift in Sources */,
 				E909D7B12B11FF21009ECC3C /* ContentViewModel.swift in Sources */,

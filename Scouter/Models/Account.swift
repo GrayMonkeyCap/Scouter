@@ -15,4 +15,8 @@ struct Account:Codable{
     let name:String
     let bio:String?
     let type:String
+    var favourite:Bool = false
+    private enum CodingKeys: String, CodingKey {
+            case login,avatar_url,url,repos_url,name,bio,type
+        }
 }

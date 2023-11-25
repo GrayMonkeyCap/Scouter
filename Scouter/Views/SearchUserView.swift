@@ -21,7 +21,7 @@ struct SearchUserView: View {
                     Divider()
                         .overlay(.yellow)
                     if let account = searchViewModel.searchedAccount{
-                        AccountCard(account: account,saveAction:{ //searchViewModel.saveAccount()
+                        AccountCard(account: account,saveAction:{ searchViewModel.saveAccount()
                             dismiss()
                         })
                     }else{
