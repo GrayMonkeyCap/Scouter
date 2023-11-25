@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct ScouterApp: App {
-    let persistenceController = PersistenceController.shared
-
+    @StateObject private var dataController = DataController.shared
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

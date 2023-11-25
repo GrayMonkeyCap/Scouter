@@ -7,16 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E909D7B12B11FF21009ECC3C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */; };
 		E93828292AFF62AB00FBABCD /* ScouterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828282AFF62AB00FBABCD /* ScouterApp.swift */; };
 		E938282B2AFF62AB00FBABCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938282A2AFF62AB00FBABCD /* ContentView.swift */; };
 		E938282D2AFF62AC00FBABCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938282C2AFF62AC00FBABCD /* Assets.xcassets */; };
 		E93828302AFF62AC00FBABCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E938282F2AFF62AC00FBABCD /* Preview Assets.xcassets */; };
-		E93828322AFF62AC00FBABCD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828312AFF62AC00FBABCD /* Persistence.swift */; };
 		E93828352AFF62AC00FBABCD /* Scouter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E93828332AFF62AC00FBABCD /* Scouter.xcdatamodeld */; };
 		E938283F2AFF62AC00FBABCD /* ScouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938283E2AFF62AC00FBABCD /* ScouterTests.swift */; };
 		E93828492AFF62AC00FBABCD /* ScouterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828482AFF62AC00FBABCD /* ScouterUITests.swift */; };
 		E938284B2AFF62AC00FBABCD /* ScouterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938284A2AFF62AC00FBABCD /* ScouterUITestsLaunchTests.swift */; };
 		E93828592AFF7E5A00FBABCD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */; };
+		E938285B2AFFA67D00FBABCD /* SearchUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938285A2AFFA67D00FBABCD /* SearchUserView.swift */; };
+		E93828612B02A53700FBABCD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828602B02A53700FBABCD /* SearchViewModel.swift */; };
+		E93828632B02A59600FBABCD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828622B02A59600FBABCD /* Account.swift */; };
+		E9762C622B106FDF00B330C4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762C612B106FDF00B330C4 /* DataController.swift */; };
+		E9ADBF6E2B03F5D700E08608 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		E93828252AFF62AB00FBABCD /* Scouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93828282AFF62AB00FBABCD /* ScouterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScouterApp.swift; sourceTree = "<group>"; };
 		E938282A2AFF62AB00FBABCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E938282C2AFF62AC00FBABCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E938282F2AFF62AC00FBABCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E93828312AFF62AC00FBABCD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E93828342AFF62AC00FBABCD /* Scouter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scouter.xcdatamodel; sourceTree = "<group>"; };
 		E938283A2AFF62AC00FBABCD /* ScouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E938283E2AFF62AC00FBABCD /* ScouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScouterTests.swift; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		E938284A2AFF62AC00FBABCD /* ScouterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScouterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E93828572AFF7B5F00FBABCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		E938285A2AFFA67D00FBABCD /* SearchUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserView.swift; sourceTree = "<group>"; };
+		E93828602B02A53700FBABCD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E93828622B02A59600FBABCD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		E9762C612B106FDF00B330C4 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +111,15 @@
 		E93828272AFF62AB00FBABCD /* Scouter */ = {
 			isa = PBXGroup;
 			children = (
+				E938285F2B02A37200FBABCD /* ViewModels */,
+				E938285E2B02A32800FBABCD /* Views */,
+				E938285D2B02A2F300FBABCD /* Models */,
 				E93828572AFF7B5F00FBABCD /* Info.plist */,
 				E93828282AFF62AB00FBABCD /* ScouterApp.swift */,
-				E938282A2AFF62AB00FBABCD /* ContentView.swift */,
 				E938282C2AFF62AC00FBABCD /* Assets.xcassets */,
-				E93828312AFF62AC00FBABCD /* Persistence.swift */,
 				E93828332AFF62AC00FBABCD /* Scouter.xcdatamodeld */,
 				E938282E2AFF62AC00FBABCD /* Preview Content */,
-				E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */,
+				E9762C612B106FDF00B330C4 /* DataController.swift */,
 			);
 			path = Scouter;
 			sourceTree = "<group>";
@@ -136,6 +147,34 @@
 				E938284A2AFF62AC00FBABCD /* ScouterUITestsLaunchTests.swift */,
 			);
 			path = ScouterUITests;
+			sourceTree = "<group>";
+		};
+		E938285D2B02A2F300FBABCD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E93828622B02A59600FBABCD /* Account.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E938285E2B02A32800FBABCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E938282A2AFF62AB00FBABCD /* ContentView.swift */,
+				E938285A2AFFA67D00FBABCD /* SearchUserView.swift */,
+				E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */,
+				E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E938285F2B02A37200FBABCD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E93828602B02A53700FBABCD /* SearchViewModel.swift */,
+				E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,10 +308,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93828322AFF62AC00FBABCD /* Persistence.swift in Sources */,
+				E93828612B02A53700FBABCD /* SearchViewModel.swift in Sources */,
+				E9ADBF6E2B03F5D700E08608 /* AccountCard.swift in Sources */,
 				E93828352AFF62AC00FBABCD /* Scouter.xcdatamodeld in Sources */,
+				E938285B2AFFA67D00FBABCD /* SearchUserView.swift in Sources */,
 				E938282B2AFF62AB00FBABCD /* ContentView.swift in Sources */,
+				E909D7B12B11FF21009ECC3C /* ContentViewModel.swift in Sources */,
+				E9762C622B106FDF00B330C4 /* DataController.swift in Sources */,
 				E93828292AFF62AB00FBABCD /* ScouterApp.swift in Sources */,
+				E93828632B02A59600FBABCD /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
