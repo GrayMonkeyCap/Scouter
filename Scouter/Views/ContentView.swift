@@ -20,7 +20,7 @@ struct ContentView: View {
                     .overlay(Color.yellow)
                 List {
                     ForEach(accountList) { account in
-                        NavigationLink(destination: SearchUserView()){
+                        NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
                             let listAccount = contentViewModel.convertAccount(account as! Accounts)
                             ListCard(account: listAccount)
                         }
@@ -62,7 +62,7 @@ struct ContentView: View {
                     Button(action: {favourites.toggle()}, label: {
                         switch favourites{
                         case false:
-                            Text("View Favourites ").bold().foregroundStyle(Color.yellow)
+                            Text("View Favourites").bold().foregroundStyle(Color.yellow)
                         case true:
                             Text("View All ").bold().foregroundStyle(Color.yellow)
                         }

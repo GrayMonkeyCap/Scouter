@@ -48,12 +48,11 @@ struct ListCard: View {
                         }.font(.caption)
                     })
                 }
-                
                 Text(account.bio ?? "")
                     .font(.caption)
             })
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {favourite.toggle()}, label: {
                 if(account.favourite){
                     Image(systemName: "star.fill")
                         .resizable()

@@ -23,6 +23,10 @@
 		E93828632B02A59600FBABCD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93828622B02A59600FBABCD /* Account.swift */; };
 		E9762C622B106FDF00B330C4 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9762C612B106FDF00B330C4 /* DataController.swift */; };
 		E9ADBF6E2B03F5D700E08608 /* AccountCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */; };
+		E9F674F62B13A7B400D99EBD /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F674F52B13A7B400D99EBD /* RepoViewController.swift */; };
+		E9F674F82B13AC2100D99EBD /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F674F72B13AC2100D99EBD /* RepoTableViewCell.swift */; };
+		E9F674FA2B13C22100D99EBD /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F674F92B13C22100D99EBD /* RepoViewModel.swift */; };
+		E9F674FC2B13C39C00D99EBD /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F674FB2B13C39C00D99EBD /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		E93828622B02A59600FBABCD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		E9762C612B106FDF00B330C4 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCard.swift; sourceTree = "<group>"; };
+		E9F674F52B13A7B400D99EBD /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		E9F674F72B13AC2100D99EBD /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		E9F674F92B13C22100D99EBD /* RepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
+		E9F674FB2B13C39C00D99EBD /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E93828622B02A59600FBABCD /* Account.swift */,
+				E9F674FB2B13C39C00D99EBD /* Repository.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +176,8 @@
 				E93828582AFF7E5A00FBABCD /* Launch Screen.storyboard */,
 				E9ADBF6D2B03F5D700E08608 /* AccountCard.swift */,
 				E909D7B22B1271C7009ECC3C /* ListCard.swift */,
+				E9F674F52B13A7B400D99EBD /* RepoViewController.swift */,
+				E9F674F72B13AC2100D99EBD /* RepoTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +187,7 @@
 			children = (
 				E93828602B02A53700FBABCD /* SearchViewModel.swift */,
 				E909D7B02B11FF21009ECC3C /* ContentViewModel.swift */,
+				E9F674F92B13C22100D99EBD /* RepoViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -311,16 +323,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F674F62B13A7B400D99EBD /* RepoViewController.swift in Sources */,
 				E93828612B02A53700FBABCD /* SearchViewModel.swift in Sources */,
+				E9F674FA2B13C22100D99EBD /* RepoViewModel.swift in Sources */,
 				E9ADBF6E2B03F5D700E08608 /* AccountCard.swift in Sources */,
 				E93828352AFF62AC00FBABCD /* Scouter.xcdatamodeld in Sources */,
 				E909D7B32B1271C7009ECC3C /* ListCard.swift in Sources */,
 				E938285B2AFFA67D00FBABCD /* SearchUserView.swift in Sources */,
+				E9F674FC2B13C39C00D99EBD /* Repository.swift in Sources */,
 				E938282B2AFF62AB00FBABCD /* ContentView.swift in Sources */,
 				E909D7B12B11FF21009ECC3C /* ContentViewModel.swift in Sources */,
 				E9762C622B106FDF00B330C4 /* DataController.swift in Sources */,
 				E93828292AFF62AB00FBABCD /* ScouterApp.swift in Sources */,
 				E93828632B02A59600FBABCD /* Account.swift in Sources */,
+				E9F674F82B13AC2100D99EBD /* RepoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
