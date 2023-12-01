@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ScouterApp: App {
     @StateObject private var dataController = DataController.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

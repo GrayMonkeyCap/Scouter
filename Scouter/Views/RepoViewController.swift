@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 import UIKit
 
-class RepoViewController: UIViewController {
+class RepoViewController: UIViewController{
     //MARK: VARIABLES
     var repos:[Repository]?
+    var filteredRepos:[Repository]?
+    var shouldShowSearchResults = false
     let viewModel = RepoViewModel()
+    var searchController:UISearchController = UISearchController()
     var repoLink:String
-    
     init(repoLink: String) {
         self.repoLink = repoLink
         super.init(nibName: nil, bundle: Bundle.main)
@@ -24,12 +26,13 @@ class RepoViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     //MARK: UI COMPONENTS
+    let refreshControl = UIRefreshControl()
     private let tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(RepoTableViewCell.self, forCellReuseIdentifier: RepoTableViewCell.identifier)
-        table.rowHeight = 100
-        //       table.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
+//        table.rowHeight = 300
+        table.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         table.tableFooterView = UIView(frame: .zero)
         return table
     }()
@@ -42,6 +45,24 @@ class RepoViewController: UIViewController {
         loader.startAnimating();
         return loader
     }()
+    //MARK: METHODS
+    func reloadTable(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    @objc func refresh(_ sender: AnyObject){
+        self.loader.startAnimating()
+        viewModel.fetchRepos(repoLink: repoLink) { [weak self] data in
+                // Update UI with data
+                self?.repos = data
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                    self?.loader.stopAnimating()
+                    self?.refreshControl.endRefreshing()
+                }
+            }
+    }
     
     //MARK: LIFECYCLE
     override func viewDidLoad() {
@@ -59,12 +80,18 @@ class RepoViewController: UIViewController {
             }
     }
     //MARK: SETUP UI
+    
     private func setupUI(){
 //        self.view.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         self.view.addSubview(tableView)
         self.view.addSubview(loader)
+        self.configureSearchController()
         tableView.allowsSelection = false
+        tableView.tableHeaderView = searchController.searchBar
         
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
@@ -74,19 +101,6 @@ class RepoViewController: UIViewController {
             loader.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
     }
-}
-
-extension RepoViewController: UITableViewDelegate, UITableViewDataSource {
-    
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: RepoTableViewCell.identifier) as! RepoTableViewCell
-//       cell.name.text = repos?[indexPath.row].name ?? "lol"
-       cell.configure(name: repos?[indexPath.row].name ?? "name",desc: repos?[indexPath.row].description ?? "desc")
-      return cell
-}
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return repos?.count ?? 0
-   }
 }
 
 struct RepoViewControllerRepresentable: UIViewControllerRepresentable {
