@@ -39,7 +39,7 @@ struct AccountCard: View {
                   .clipped()
                   .cornerRadius(50)
                 Spacer()
-                Text(account.name)
+                Text(account.name ?? "")
                     .font(.title)
                     
                     

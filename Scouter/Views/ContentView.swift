@@ -10,7 +10,7 @@ import CoreData
 let navBarAppearance = UINavigationBarAppearance()
 let tabBarAppearance = UITabBarAppearance()
 struct ContentView: View {
-    @StateObject private var contentViewModel = ContentViewModel()
+    @StateObject private var contentViewModel = ContentViewModel(dataController: DataController.shared)
     @FetchRequest(sortDescriptors: []) var accountList: FetchedResults<Accounts>
     @State var favourites = false
     init() {

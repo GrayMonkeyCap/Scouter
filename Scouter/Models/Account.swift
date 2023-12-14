@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Account:Codable{
+struct Account:Codable,Equatable{
     let login:String
     let avatar_url:String
     let url:String
     let repos_url:String
-    let name:String
+    let name:String?
     let bio:String?
     let type:String
     var favourite:Bool = false

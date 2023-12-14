@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchUserView: View {
     @Environment(\.dismiss) var dismiss
-    @ObservedObject var searchViewModel = SearchViewModel()
+    @ObservedObject var searchViewModel = SearchViewModel(dataController: DataController.shared, apiService: ApiService.shared)
     @State var searchText = ""
     var body: some View {
         

@@ -14,7 +14,7 @@ class RepoViewController: UIViewController{
     var repos:[Repository]?
     var filteredRepos:[Repository]?
     var shouldShowSearchResults = false
-    let viewModel = RepoViewModel()
+    let viewModel = RepoViewModel(apiService: ApiService.shared)
     var searchController:UISearchController = UISearchController()
     var repoLink:String
     init(repoLink: String) {

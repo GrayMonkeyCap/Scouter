@@ -40,7 +40,7 @@ struct ListCard: View {
                       .clipped()
                       .cornerRadius(50)
                     VStack(alignment: .leading, content: {
-                        Text(account.name)
+                        Text(account.name ?? "")
                         HStack {
                             Image(systemName: "person.fill")
                             Text(account.login)
