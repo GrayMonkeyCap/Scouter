@@ -34,7 +34,8 @@ struct ContentView: View {
                     Section(header: Text("Users")
                         .foregroundStyle(.yellow)){
                             ForEach(accountList.filter{$0.type == "User"}) { account in
-                                NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
+                                NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)
+                                    .edgesIgnoringSafeArea(.all)){
                                     let listAccount = contentViewModel.convertAccount(account as! Accounts)
                                     ListCard(account: listAccount)
                                 }
@@ -59,7 +60,9 @@ struct ContentView: View {
                         .foregroundStyle(.yellow)
                     ){
                         ForEach(accountList.filter{$0.type == "Organization"}) { account in
-                            NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
+                            NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)
+                                .edgesIgnoringSafeArea(.all)
+                            ){
                                 let listAccount = contentViewModel.convertAccount(account as! Accounts)
                                 ListCard(account: listAccount)
                                 

@@ -82,7 +82,6 @@ class RepoViewController: UIViewController{
     //MARK: SETUP UI
     
     private func setupUI(){
-        //        self.view.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         self.view.addSubview(tableView)
         self.view.addSubview(loader)
         self.configureSearchController()

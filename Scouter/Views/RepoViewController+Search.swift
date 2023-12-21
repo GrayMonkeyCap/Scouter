@@ -33,5 +33,16 @@ extension RepoViewController:UISearchBarDelegate,UISearchResultsUpdating{
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         searchController.searchBar.barTintColor = UIColor(named: "LaunchScreenBackgroundColor")
+        searchController.searchBar.tintColor = UIColor(.yellow)
+        searchController.searchBar.setTextColor(UIColor(named: "Gold")!)
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search Repository", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Gold")!])
+        searchController.searchBar.searchTextField.leftView?.tintColor = UIColor(named: "Gold")
+    }
+}
+
+extension UISearchBar {
+    func setTextColor(_ color: UIColor) {
+        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = color
     }
 }
