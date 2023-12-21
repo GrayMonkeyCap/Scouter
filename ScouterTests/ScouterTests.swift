@@ -13,11 +13,11 @@ final class ScouterTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -25,14 +25,14 @@ final class ScouterTests: XCTestCase {
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
     func testGetAccount(){
         var searchVM = SearchUserView.SearchViewModel(dataController: testDataController, apiService: MockApiService())
         let testAccount = Account(login: "tester", avatar_url: "https://avatars.githubusercontent.com/u/78576375?s=40&v=4", url: "vdfv", repos_url: "fgdf", name: "John Watson", bio: "Lorem ipsum dolor sit amet",type: "Organisation",favourite: true)
@@ -73,7 +73,7 @@ final class ScouterTests: XCTestCase {
         }
         var contentVM = ContentView.ContentViewModel(dataController: testDataController)
         contentVM.deleteAccount(at: offset, accountList: accountList)
-        }
+    }
     func testConvertAccount(){
         var contentVM = ContentView.ContentViewModel(dataController: testDataController)
         let testAccount = Account(login: "tester", avatar_url: "https://avatars.githubusercontent.com/u/78576375?s=40&v=4", url: "vdfv", repos_url: "fgdf", name: "John Watson", bio: "Lorem ipsum dolor sit amet",type: "Organisation",favourite: true)

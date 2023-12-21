@@ -19,7 +19,7 @@ class MockApiService:ApiServiceProtocol{
     
     func fetchAccount(userName: String,completion: @escaping (Account) -> Void){
         let account = Account(login: "tester", avatar_url: "https://avatars.githubusercontent.com/u/78576375?s=40&v=4", url: "vdfv", repos_url: "fgdf", name: "John Watson", bio: "Lorem ipsum dolor sit amet",type: "Organisation",favourite: true)
-       completion(account)
+        completion(account)
     }
     
 }

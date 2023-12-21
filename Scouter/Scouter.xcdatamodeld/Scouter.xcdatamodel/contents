@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Accounts" representedClassName="Accounts" syncable="YES" codeGenerationType="class">
+    <entity name="Accounts" representedClassName="Accounts" parentEntity="Tags" syncable="YES">
         <attribute name="avatar_url" optional="YES" attributeType="String"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -9,5 +9,15 @@
         <attribute name="repos_url" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="tag" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tags" inverseName="account" inverseEntity="Tags"/>
+    </entity>
+    <entity name="Tags" representedClassName="Tags" syncable="YES">
+        <attribute name="tagName" optional="YES" attributeType="String"/>
+        <relationship name="account" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Accounts" inverseName="tag" inverseEntity="Accounts"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="tagName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

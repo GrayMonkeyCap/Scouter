@@ -34,15 +34,15 @@ struct AccountCard: View {
                             .frame(width: 60, height: 60)
                     }
                 }
-                  .scaledToFill()
-                  .frame(width: 60, height: 60)
-                  .clipped()
-                  .cornerRadius(50)
+                .scaledToFill()
+                .frame(width: 60, height: 60)
+                .clipped()
+                .cornerRadius(50)
                 Spacer()
                 Text(account.name ?? "")
                     .font(.title)
-                    
-                    
+                
+                
             }
             Text(account.bio ?? "")
                 .font(.title2)

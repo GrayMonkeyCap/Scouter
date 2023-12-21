@@ -35,16 +35,16 @@ struct ListCard: View {
                                 .frame(width: 60, height: 60)
                         }
                     }
-                      .scaledToFill()
-                      .frame(width: 60, height: 60)
-                      .clipped()
-                      .cornerRadius(50)
+                    .scaledToFill()
+                    .frame(width: 60, height: 60)
+                    .clipped()
+                    .cornerRadius(50)
                     VStack(alignment: .leading, content: {
                         Text(account.name ?? "")
                         HStack {
                             Image(systemName: "person.fill")
                             Text(account.login)
-                                
+                            
                         }.font(.caption)
                     })
                 }

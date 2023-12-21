@@ -31,21 +31,21 @@ class ApiService:ApiServiceProtocol{
     }
     func fetchRepos(repoLink:String,completion: @escaping ([Repository]) -> Void){
         
-            let url = URL(string: repoLink)!
+        let url = URL(string: repoLink)!
+        
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            do{
+                let repos = try decoder.decode([Repository].self, from: data)
+                completion(repos)
+            }catch{
+                print(error)
+            }
             
-            let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-                guard let data = data else { return }
-                let decoder = JSONDecoder()
-                do{
-                    let repos = try decoder.decode([Repository].self, from: data)
-                    completion(repos)
-                }catch{
-                    print(error)
-                }
-                
-            }
-            task.resume()
-            }
+        }
+        task.resume()
+    }
     
     
 }

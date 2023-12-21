@@ -30,5 +30,10 @@ extension ContentView{
             let acc = Account(login: a.login!, avatar_url: a.avatar_url!, url: a.url!, repos_url: a.repos_url!, name: a.name ?? "", bio: a.bio ?? "", type: a.type!,favourite: a.favourite)
             return acc
         }
+        
+        //        func updateTag(_ account:Accounts, tagName:String){
+        //            account.tagName = tagName
+        //            dataController.saveData()
+        //        }
     }
 }

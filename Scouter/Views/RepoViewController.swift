@@ -31,7 +31,7 @@ class RepoViewController: UIViewController{
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(RepoTableViewCell.self, forCellReuseIdentifier: RepoTableViewCell.identifier)
-//        table.rowHeight = 300
+        //        table.rowHeight = 300
         table.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         table.tableFooterView = UIView(frame: .zero)
         return table
@@ -54,14 +54,14 @@ class RepoViewController: UIViewController{
     @objc func refresh(_ sender: AnyObject){
         self.loader.startAnimating()
         viewModel.fetchRepos(repoLink: repoLink) { [weak self] data in
-                // Update UI with data
-                self?.repos = data
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                    self?.loader.stopAnimating()
-                    self?.refreshControl.endRefreshing()
-                }
+            // Update UI with data
+            self?.repos = data
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.loader.stopAnimating()
+                self?.refreshControl.endRefreshing()
             }
+        }
     }
     
     //MARK: LIFECYCLE
@@ -71,18 +71,18 @@ class RepoViewController: UIViewController{
         self.tableView.dataSource=self
         self.tableView.delegate=self
         viewModel.fetchRepos(repoLink: repoLink) { [weak self] data in
-                // Update UI with data
-                self?.repos = data
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                    self?.loader.stopAnimating()
-                }
+            // Update UI with data
+            self?.repos = data
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+                self?.loader.stopAnimating()
             }
+        }
     }
     //MARK: SETUP UI
     
     private func setupUI(){
-//        self.view.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
+        //        self.view.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         self.view.addSubview(tableView)
         self.view.addSubview(loader)
         self.configureSearchController()
@@ -113,7 +113,7 @@ struct RepoViewControllerRepresentable: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> RepoViewController {
         return RepoViewController(repoLink: repoLink)
     }
-
+    
     func updateUIViewController(_ uiViewController: RepoViewController, context: Context) {
         // Update the view controller if needed
     }

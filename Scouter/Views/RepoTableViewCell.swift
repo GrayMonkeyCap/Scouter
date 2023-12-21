@@ -8,18 +8,18 @@
 import UIKit
 
 class RepoTableViewCell: UITableViewCell {
-
+    
     static let identifier = "repoCell"
     private var topics:[String]?
     
     let contentContainerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = UIColor(named: "Grayish")
-            view.layer.cornerRadius = 10 // Adjust the corner radius as needed
-            view.layer.masksToBounds = true
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "Grayish")
+        view.layer.cornerRadius = 10 // Adjust the corner radius as needed
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let name:UILabel = {
         let label = UILabel()
@@ -40,16 +40,16 @@ class RepoTableViewCell: UITableViewCell {
     
     private let topicStack:UIStackView = {
         let stackView = UIStackView()
-            stackView.spacing = 2
-            stackView.distribution = .fillProportionally
-            stackView.axis = .horizontal
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            return stackView
+        stackView.spacing = 2
+        stackView.distribution = .fillProportionally
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     private let topicCollectionView:UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSizeMake(150, 25)
+        //        layout.itemSize = CGSizeMake(150, 25)
         layout.scrollDirection = .horizontal
         let topicCV = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
         topicCV.translatesAutoresizingMaskIntoConstraints = false
@@ -71,14 +71,14 @@ class RepoTableViewCell: UITableViewCell {
         contentContainerView.addSubview(name)
         contentContainerView.addSubview(desc)
         contentContainerView.addSubview(topicCollectionView)
-
+        
         topicCollectionView.delegate   = self
         topicCollectionView.dataSource = self
         topicCollectionView.backgroundColor = UIColor(named: "Grayish")
         topicCollectionView.register(TopicCell.self, forCellWithReuseIdentifier: "topicCell")
         name.translatesAutoresizingMaskIntoConstraints = false
         desc.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         NSLayoutConstraint.activate([
             contentContainerView.topAnchor.constraint(equalTo: self.contentView.topAnchor,constant: 0),
             contentContainerView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,constant: -10),
@@ -128,9 +128,9 @@ extension RepoTableViewCell:UICollectionViewDataSource, UICollectionViewDelegate
 
 class TopicCell:UICollectionViewCell{
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            addViews()
-        }
+        super.init(frame: frame)
+        addViews()
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

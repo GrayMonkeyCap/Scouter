@@ -13,10 +13,10 @@ struct Repository:Codable{
     let fork:Bool
     let topics:[String]
     enum CodingKeys : String, CodingKey {
-            case name
-            case description
-            case fork
-            case topics
-        }
+        case name
+        case description
+        case fork
+        case topics
+    }
 }
 

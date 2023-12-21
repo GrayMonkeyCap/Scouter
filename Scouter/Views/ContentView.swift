@@ -9,19 +9,21 @@ import SwiftUI
 import CoreData
 let navBarAppearance = UINavigationBarAppearance()
 let tabBarAppearance = UITabBarAppearance()
+
 struct ContentView: View {
-    @StateObject private var contentViewModel = ContentViewModel(dataController: DataController.shared)
+    @StateObject var contentViewModel = ContentViewModel(dataController: DataController.shared)
     @FetchRequest(sortDescriptors: []) var accountList: FetchedResults<Accounts>
     @State var favourites = false
+    @State private var popOverAccount:Accounts?
     init() {
         navBarAppearance.configureWithOpaqueBackground()
         navBarAppearance.backgroundColor = UIColor(named: "LaunchScreenBackgroundColor")
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.yellow]
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.yellow]
-                   
+        
         UINavigationBar.appearance().standardAppearance = navBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        }
+    }
     var body: some View {
         NavigationStack {
             VStack {
@@ -31,29 +33,28 @@ struct ContentView: View {
                 List {
                     Section(header: Text("Users")
                         .foregroundStyle(.yellow)){
-                        ForEach(accountList.filter{$0.type == "User"}) { account in
-                            NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
-                                let listAccount = contentViewModel.convertAccount(account as! Accounts)
-                                ListCard(account: listAccount)
+                            ForEach(accountList.filter{$0.type == "User"}) { account in
+                                NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
+                                    let listAccount = contentViewModel.convertAccount(account as! Accounts)
+                                    ListCard(account: listAccount)
+                                }
+                                .listRowBackground(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .background(.clear)
+                                        .foregroundColor(Color("Grayish", bundle: Bundle.main))
+                                        .padding(
+                                            EdgeInsets(
+                                                top: 2,
+                                                leading: 0,
+                                                bottom: 3,
+                                                trailing: 0
+                                            )
+                                        ))
+                                .foregroundStyle(.yellow)
+                                
                             }
-                            .listRowBackground(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .background(.clear)
-                                    .foregroundColor(Color("Grayish", bundle: Bundle.main))
-                                    .padding(
-                                        EdgeInsets(
-                                            top: 2,
-                                            leading: 0,
-                                            bottom: 3,
-                                            trailing: 0
-                                        )
-                                    ))
-                            .foregroundStyle(.yellow)
-                            
+                            .onDelete(perform: deleteAccount)
                         }
-                        .onDelete(perform: deleteAccount)
-                    }
-                    
                     Section(header: Text("Organizations")
                         .foregroundStyle(.yellow)
                     ){
@@ -61,6 +62,7 @@ struct ContentView: View {
                             NavigationLink(destination: RepoViewControllerRepresentable(repoLink: account.repos_url!)){
                                 let listAccount = contentViewModel.convertAccount(account as! Accounts)
                                 ListCard(account: listAccount)
+                                
                             }
                             .listRowBackground(
                                 RoundedRectangle(cornerRadius: 10)
@@ -78,11 +80,16 @@ struct ContentView: View {
                             
                         }
                         .onDelete(perform: deleteOrganization)
+                        
                     }
+                }
+                .popover(item: $popOverAccount){ account in
+                    PopOverView(account: account)
+                    //                        .presentationCompactAdaptation((.popover))
                 }
                 .headerProminence(.increased)
                 .scrollContentBackground(.hidden)
-
+                
                 NavigationLink(destination: SearchUserView()) {
                     Image(systemName: "plus")
                         .resizable()

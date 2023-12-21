@@ -36,20 +36,20 @@ struct SearchUserView: View {
                 
             }.searchable(text: $searchText, placement: .automatic)
                 .onSubmit(of: .search) {
-                     searchViewModel.getAccount(searchText)
+                    searchViewModel.getAccount(searchText)
                     
                 }
                 .foregroundStyle(.yellow)
                 .tint(.yellow)
-                
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Add Account")
-                        .foregroundStyle(.yellow)
-                        .font(.title)
+            
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("Add Account")
+                            .foregroundStyle(.yellow)
+                            .font(.title)
+                    }
                 }
-            }
-
+            
         }
     }
 }

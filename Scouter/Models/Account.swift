@@ -17,6 +17,6 @@ struct Account:Codable,Equatable{
     let type:String
     var favourite:Bool = false
     private enum CodingKeys: String, CodingKey {
-            case login,avatar_url,url,repos_url,name,bio,type
-        }
+        case login,avatar_url,url,repos_url,name,bio,type
+    }
 }

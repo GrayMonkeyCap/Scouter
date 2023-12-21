@@ -11,7 +11,7 @@ extension RepoViewController{
     class RepoViewModel{
         
         var apiService : ApiServiceProtocol
-
+        
         init(apiService: ApiServiceProtocol) {
             self.apiService = apiService
         }
