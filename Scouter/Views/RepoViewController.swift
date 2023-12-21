@@ -88,9 +88,11 @@ class RepoViewController: UIViewController{
         tableView.allowsSelection = false
         tableView.tableHeaderView = searchController.searchBar
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh",attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "Gold")!])
+        refreshControl.backgroundColor = UIColor(named: "Grayish")
+        refreshControl.tintColor = UIColor(named: "Gold")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        tableView.refreshControl = refreshControl
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
